@@ -54,7 +54,7 @@
 							<li <c:if test="${fn:endsWith(page,'buy.jsp')}"> class="current_page_item"</c:if>><a href="buy">Buy</a></li>
 							<li <c:if test="${fn:endsWith(page,'marketplace.jsp')}"> class="current_page_item"</c:if>><a href="marketplace">MarketPlace</a></li>
 							<li <c:if test="${fn:endsWith(page,'contact.jsp')}"> class="current_page_item"</c:if>><a href="contact">Contact</a></li>
-							<li <c:if test="${fn:endsWith(page,'login.jsp')}"> class="current_page_item"</c:if>><a href="contact">Register/Login</a></li>
+							<li <c:if test="${fn:endsWith(page,'login.jsp')}"> class="current_page_item"</c:if>><a href="login">Register/Login</a></li>
 							<!-- <li><a href="onecolumn">One Column</a></li> -->
 							
 						</ul>

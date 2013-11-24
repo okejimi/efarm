@@ -37,7 +37,7 @@
 						massa.</p>
 					<div class="btn-align">
 						<a class="more-link" target="_self"
-							title="learn more" href="about">learn more</a>
+							title="learn more" href="">learn more</a>
 					</div>
 				</section>
 			</div>
@@ -55,7 +55,7 @@
 						tellus non erat lacinia fer mentum. Donec in velit vel ipsum auct.</p>
 						<div class="btn-align">
 						<a class="more-link" target="_self"
-							title="learn more" href="about">learn more</a>
+							title="learn more" href="">learn more</a>
 					</div>
 				</section>
 			</div>
@@ -66,8 +66,7 @@
 					</figure>
 					<h2>IN THE NEWS</h2>
 					<ul class="style-list">
-						<c:forEach items="${news}" var="title" end="4">
-						
+						<c:forEach items="${news}" var="title" end="4" varStatus="status">						
 							<span class="bold-list"><c:out value="${fn:substring(title, 0, 1)}" /></span><li>${title}</li>
 						</c:forEach>
 					</ul>
@@ -204,7 +203,7 @@
 		<div class="row">
 			<div class="12u">
 				<div class="cta-box">
-					<span>Amet lorem varius tempus consequat lorem?</span> <a href="#"
+					<span>Farmland at your doorstep</span> <a href="#"
 						class="button">Ipsum Consequat</a>
 				</div>
 			</div>

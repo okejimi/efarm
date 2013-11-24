@@ -8,7 +8,7 @@
 -->
 <html>
 <head>
-<title>Efarm Nigeria</title>
+<title>efarm africa</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="description" content="" />
 <meta name="keywords" content="" />
@@ -26,6 +26,14 @@
 </noscript>
 <!--[if lte IE 9]><link rel="stylesheet" href="resources/css/style-ie9.css" /><![endif]-->
 <!--[if lte IE 8]><script src="resources/js/html5shiv.js"></script><![endif]-->
+<script type="text/javascript">
+	$(function() {
+	  $('span.bold-list').each(function(){
+		var col = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
+		$(this).css('background-color', col);
+	  });
+	});
+</script>
 </head>
 <body>
 
@@ -36,7 +44,7 @@
 			<div class="row">
 				<div class="12u">
 					<div id="logo">
-						<h1>Efarm nigeria</h1>
+						<h1>efarm africa</h1>
 					</div>
 					<nav id="nav">
 						<ul>
@@ -46,6 +54,7 @@
 							<li <c:if test="${fn:endsWith(page,'buy.jsp')}"> class="current_page_item"</c:if>><a href="buy">Buy</a></li>
 							<li <c:if test="${fn:endsWith(page,'marketplace.jsp')}"> class="current_page_item"</c:if>><a href="marketplace">MarketPlace</a></li>
 							<li <c:if test="${fn:endsWith(page,'contact.jsp')}"> class="current_page_item"</c:if>><a href="contact">Contact</a></li>
+							<li <c:if test="${fn:endsWith(page,'login.jsp')}"> class="current_page_item"</c:if>><a href="login">Register/Login</a></li>
 							<!-- <li><a href="onecolumn">One Column</a></li> -->
 							
 						</ul>

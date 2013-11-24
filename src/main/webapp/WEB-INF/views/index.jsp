@@ -37,7 +37,7 @@
 						massa.</p>
 					<div class="btn-align">
 						<a class="more-link" target="_self"
-							title="learn more" href="about">learn more</a>
+							title="learn more" href="">learn more</a>
 					</div>
 				</section>
 			</div>
@@ -55,7 +55,7 @@
 						tellus non erat lacinia fer mentum. Donec in velit vel ipsum auct.</p>
 						<div class="btn-align">
 						<a class="more-link" target="_self"
-							title="learn more" href="about">learn more</a>
+							title="learn more" href="">learn more</a>
 					</div>
 				</section>
 			</div>
@@ -203,7 +203,7 @@
 		<div class="row">
 			<div class="12u">
 				<div class="cta-box">
-					<span>Amet lorem varius tempus consequat lorem?</span> <a href="#"
+					<span>Farmland at your doorstep</span> <a href="#"
 						class="button">Ipsum Consequat</a>
 				</div>
 			</div>
