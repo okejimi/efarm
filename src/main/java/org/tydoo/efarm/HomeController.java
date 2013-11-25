@@ -3,8 +3,10 @@ package org.tydoo.efarm;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -45,9 +47,12 @@ public class HomeController {
 	}
 	
 	private List<String> parseNews() throws Exception {
-		URL url = new URL("https://news.google.co.uk/news/feeds?cf=all&ned=en_ng&hl=en&topic=b&output=rss");
+		
+		URL url = new URL("http://www.theafricareport.com/index.php?option=com_obrss&task=feed&id=10?option=com_obrss&task=feed&id=10");
         HttpURLConnection httpcon = (HttpURLConnection)url.openConnection();
+        httpcon.addRequestProperty("User-Agent", "Mozilla/4.76");
         // Reading the feed
+        
         SyndFeedInput input = new SyndFeedInput();
         SyndFeed feed = input.build(new XmlReader(httpcon));
         List<?> entries = feed.getEntries();
@@ -58,6 +63,8 @@ public class HomeController {
             SyndEntry entry = (SyndEntry) itEntries.next();
             syndEntries.add(entry.getTitle());
         }
+        
+        Collections.shuffle(syndEntries, new Random(System.nanoTime()));
         
         return syndEntries;
 	}

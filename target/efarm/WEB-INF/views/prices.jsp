@@ -204,7 +204,7 @@
 		<div class="row">
 			<div class="12u">
 				<div class="cta-box">
-					<span>Amet lorem varius tempus consequat lorem?</span> <a href="#"
+					<span>Farmland at your doorstep</span> <a href="#"
 						class="button">Ipsum Consequat</a>
 				</div>
 			</div>

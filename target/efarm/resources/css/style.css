@@ -94,6 +94,7 @@
 }
 ul.style-list li {
 	margin-bottom: 10px;
+	min-height: 55px;
 }
 .feature-product {
 	margin-right: 30px; 

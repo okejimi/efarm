@@ -8,7 +8,7 @@
 -->
 <html>
 <head>
-<title>efarm africa</title>
+<title>e-farm africa</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="description" content="" />
 <meta name="keywords" content="" />
@@ -44,7 +44,7 @@
 			<div class="row">
 				<div class="12u">
 					<div id="logo">
-						<h1>efarm africa</h1>
+						<h1>e-farm africa</h1>
 					</div>
 					<nav id="nav">
 						<ul>
