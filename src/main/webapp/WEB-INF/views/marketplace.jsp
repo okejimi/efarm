@@ -7,73 +7,64 @@
 		<!-- Banner -->
 
 		<div class="row">
-			<div class="12u">
-				<div id="banner">
-					<a href="#"><img src="resources/images/banner.jpg" alt="" /></a>
-					<!-- <div class="caption">
-						<span><strong>Arcana</strong>: A responsive HTML5 site
-							template by HTML5 UP</span> <a href="#" class="button">Find Out
-							More!</a>
-					</div> -->
+			<div class="3u">
+				<div>&nbsp;</div>
+			</div>
+			<div class="9u">
+				<div class="centre-form">
+					<!--Begin listing form -->
+					<h2 style="margin: 0 auto">LIST YOUR ITEM</h2>
+					<form class="pure-form pure-form-aligned" id="product-form"
+						action="addproduct?${_csrf.parameterName}=${_csrf.token}" method="post" enctype="multipart/form-data">
+						<fieldset>
+							<div class="pure-control-group">
+								<label for="item name">Item</label> <input id="item" type="text"
+									name="name" placeholder="Item name e.g yam, cocoa">
+							</div>
+
+							<div class="pure-control-group">
+								<label for="location">Location</label> <input id="location"
+									type="text" placeholder="Item location" name="location">
+							</div>
+
+							<div class="pure-control-group">
+								<label for="price">Price</label> <input id="price" type="number"
+									placeholder="Item price" name="price">
+							</div>
+
+							<div class="pure-control-group">
+								<label for="quantity">Quantity</label> <input id="quantity"
+									type="number" placeholder="Item quantity" name="quantity">
+							</div>
+
+							<div class="pure-control-group">
+								<label for="description">Item description</label>
+								<textarea name="description" id="description"
+									style="width: 600px;" placeholder="Enter a short description"></textarea>
+							</div>
+
+							<div class="pure-control-group">
+								<label for="file">Photo</label> <input type="file" name="file"
+									id="file" style="width: 600px;"
+									placeholder="Upload a file if any">
+							</div>
+
+							<div class="pure-controls">
+								<input type="hidden" name="${_csrf.parameterName}"
+									value="${_csrf.token}" />
+								<button type="submit" class="pure-button pure-button-primary">Submit</button>
+							</div>
+						</fieldset>
+					</form>
+
+					<!-- End listing form -->
 				</div>
 			</div>
-		</div>
-
-		<!-- Features -->
-
-		<div class="row">
-			<div class="4u">
-				<section class="first">
-					<figure>
-						<img alt="" src="resources/images/leaf.png">
-					</figure>
-					<h2>WHY US?</h2>
-					<p>Mauris fermentum dictum magneuam leo. Ut telloribus eget
-						elementum vel curleifend elit. Aean auctorisi et urnaliqt.
-						Duirpis. Inteerutrm ante eu lastibulumiamur ulla fn nec eros.
-						Vestiblum ante ipsum primis faorci lucs et utrices posuere
-						cubilipende sollicitudin vd leo pharetra aug ne.ugue. Nlit
-						magnandrerit siet tiidunt aciverra sed nullanec porta diam eu
-						massa.</p>
-					<div class="btn-align">
-						<a class="more-link" target="_self"
-							title="learn more" href="">learn more</a>
-					</div>
-				</section>
-			</div>
-			<div class="4u">
-				<section>
-					<figure>
-						<img alt="" src="resources/images/cloud.png">
-					</figure>
-					<h2>WHO WE ARE</h2>
-					<p>Duirpis. Inteerutrm ante eu lastibulumiam Estiblum ante
-						ipsum primis faorci lucs et utrices posuere cubilipende
-						sollicitudin veied leo pharetra aug neaugue. Nlit magnandrerit
-						siet tinidunt aciverra sed nulla.onec porta diam eu massa. Quisque
-						diam lorem interdum apibus ac scelerisque vitpede. Donec eget
-						tellus non erat lacinia fer mentum. Donec in velit vel ipsum auct.</p>
-						<div class="btn-align">
-						<a class="more-link" target="_self"
-							title="learn more" href="">learn more</a>
-					</div>
-				</section>
-			</div>
-			<div class="4u">
-				<section class="last">
-					<figure>
-						<img alt="" src="resources/images/news.png">
-					</figure>
-					<h2>IN THE NEWS</h2>
-					<ul class="style-list">
-						<c:forEach items="${news}" var="title" end="4">
-						
-							<span class="bold-list"><c:out value="${fn:substring(title, 0, 1)}" /></span><li>${title}</li>
-						</c:forEach>
-					</ul>
-				</section>
+			<div class="3u">
+				<div>&nbsp;</div>
 			</div>
 		</div>
+
 
 		<!-- Divider -->
 
@@ -193,7 +184,7 @@
 
 		<!-- Divider -->
 
-	<!-- 	<div class="row">
+		<!-- 	<div class="row">
 			<div class="12u">
 				<div class="divider divider-top"></div>
 			</div>

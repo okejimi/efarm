@@ -24,5 +24,4 @@
 	<context:component-scan base-package="org.tydoo.efarm" />
 	
 	
-	
 </beans:beans>
