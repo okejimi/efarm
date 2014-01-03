@@ -100,8 +100,9 @@ public class InfrastructureConfig {
 		props.put("hibernate.cache.use_second_level_cache", Boolean.valueOf(true));
 		props.put("hibernate.cache.use_query_cache", Boolean.valueOf(true));
 		props.put("hibernate.hbm2ddl.auto", "update");
-		props.put("hibernate.search.default.directory_provider", "ram");
-		props.put("hibernate.search.default.indexBase", "indexes");
+		//props.put("hibernate.search.default.directory_provider", "ram");
+		props.put("hibernate.search.default.directory_provider", "filesystem");
+		props.put("hibernate.search.default.indexBase", "/home/jenkins/index");
 		
 		return props;
 	}
