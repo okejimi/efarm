@@ -102,7 +102,7 @@ public class InfrastructureConfig {
 		props.put("hibernate.hbm2ddl.auto", "update");
 		//props.put("hibernate.search.default.directory_provider", "ram");
 		props.put("hibernate.search.default.directory_provider", "filesystem");
-		props.put("hibernate.search.default.indexBase", "/home/jenkins/index");
+		props.put("hibernate.search.default.indexBase", "/scratch/jenkins/workspace/efarm/index");
 		
 		return props;
 	}
