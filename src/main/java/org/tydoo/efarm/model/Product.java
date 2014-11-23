@@ -67,6 +67,10 @@ public class Product extends AbstractDomainObject {
 	@Fields({ @Field(name = "location"),
 			@Field(name = "location_facet", analyze = Analyze.NO) })
 	private String location;
+	
+	@Fields({ @Field(name = "category"),
+		@Field(name = "category_facet", analyze = Analyze.NO) })
+	private Category category;
 
 	private String quantity;
 	private Blob photo;
@@ -97,7 +101,7 @@ public class Product extends AbstractDomainObject {
 	 *            must not be {@literal null} or less than or equal to zero.
 	 */
 	public Product(String name, BigDecimal price) {
-		this(name, price, null, null, null, null);
+		this(name, price, null, null, null, null, null);
 	}
 
 	/**
@@ -110,7 +114,7 @@ public class Product extends AbstractDomainObject {
 	 * @param description
 	 */
 	public Product(String name, BigDecimal price, String description,
-			String location, String quantity, Blob photo) {
+			String location, String quantity, Blob photo, final Category category) {
 
 		Assert.hasText(name, "Name must not be null or empty!");
 		Assert.isTrue(BigDecimal.ZERO.compareTo(price) < 0,
@@ -122,6 +126,7 @@ public class Product extends AbstractDomainObject {
 		this.location = location;
 		this.quantity = quantity;
 		this.photo = photo;
+		this.category = category;
 	}
 
 	/**
@@ -232,6 +237,14 @@ public class Product extends AbstractDomainObject {
 
 	public void setPerson(Person person) {
 		this.person = person;
+	}
+
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
 	}
 
 	public String toString() {

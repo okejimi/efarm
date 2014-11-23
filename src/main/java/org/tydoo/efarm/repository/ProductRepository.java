@@ -58,11 +58,16 @@ public class ProductRepository extends BaseRepository<Product> {
 
 		facetManager.enableFaceting(createFacetRequest(b, "location"));
 		List<Facet> locationFacets = facetManager.getFacets("location");
+		
+		facetManager.enableFaceting(createFacetRequest(b, "category"));
+		List<Facet> categoryFacets = facetManager.getFacets("category");
 
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		resultMap.put("products", result);
 		resultMap.put("productsFacets", facets);
 		resultMap.put("locationFacets", locationFacets);
+		resultMap.put("categoryFacet", categoryFacets);
+		
 		return resultMap;
 	}
 
@@ -75,7 +80,7 @@ public class ProductRepository extends BaseRepository<Product> {
 
 		org.apache.lucene.queryParser.MultiFieldQueryParser parser = new MultiFieldQueryParser(
 				Version.LUCENE_33, new String[] { "name", "location",
-						"description" }, fullTextEntityManager
+						"description", "category" }, fullTextEntityManager
 						.getSearchFactory().getAnalyzer(Product.class));
 		parser.setAllowLeadingWildcard(true);
 
@@ -107,11 +112,15 @@ public class ProductRepository extends BaseRepository<Product> {
 
 		facetManager.enableFaceting(createFacetRequest(b, "location"));
 		List<Facet> locationFacets = facetManager.getFacets("location");
+		
+		facetManager.enableFaceting(createFacetRequest(b, "category"));
+		List<Facet> categoryFacets = facetManager.getFacets("category");
 
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		resultMap.put("products", result);
 		resultMap.put("productsFacets", facets);
 		resultMap.put("locationFacets", locationFacets);
+		resultMap.put("categoryFacets", categoryFacets);
 
 		return resultMap;
 	}

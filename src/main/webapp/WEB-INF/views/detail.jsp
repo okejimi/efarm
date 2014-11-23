@@ -1,123 +1,121 @@
+
 <%@ include file="head.jsp"%>
 <!-- Main -->
 
 <div id="main-wrapper">
+
 	<div class="container">
 
 		<!-- Banner -->
 
-		<div class="row">
-			<div>
-				<form action="buy" method="post">
-					<input type="text" name="search" placeholder="Enter a search term"
-						id="search" value="${search}"> <input type="hidden"
-						name="${_csrf.parameterName}" value="${_csrf.token}" />
-					<div>
-						<input type="submit" value="Sign In" />
-					</div>
-				</form>
-			</div>
-			<div class="3u">
-				<p class="facet-heading">Name</p>
-				<form action="buy?search=${search}" method="post" id="facet-form">
-					<ul>
-						<c:forEach items="${products.productsFacets}" var="facet"
-							varStatus="status">
-							<li><ul class="inline-list">
-									<li><input type="checkbox" title="${facet.value}"
-										name="name" value="${facet.value}"
-										<c:forEach items="${nameFilters}" var="nameFilter">
-								<c:if test="${nameFilter eq facet.value}">checked="checked"</c:if>
-							</c:forEach>></li>
-									<li>${facet.value}</li>
-									<li>${facet.count}</li>
-								</ul></li>
-						</c:forEach>
-					</ul>
-					<div class="row">
-						<div class="12u">
-							<div class="bottom-divider divider-bottom"></div>
-						</div>
-					</div>
-					<p class="facet-heading">Location</p>
-					<ul>
-						<c:forEach items="${products.locationFacets}" var="facet"
-							varStatus="status">
-							<li><ul class="inline-list">
-									<li><input type="checkbox" title="${facet.value}"
-										name="location" value="${facet.value}"
-										<c:forEach items="${locationFilters}" var="locationFilter">
-								<c:if test="${locationFilter eq facet.value}">checked="checked"</c:if>
-							</c:forEach>></li>
-									<li>${facet.value}</li>
-									<li>${facet.count}</li>
-								</ul></li>
-						</c:forEach>
-					</ul>
-					<div class="row">
-						<div class="12u">
-							<div class="bottom-divider divider-bottom"></div>
-						</div>
-					</div>
-					<p class="facet-heading">Category</p>
-					<ul>
-						<c:forEach items="${products.categoryFacets}" var="facet"
-							varStatus="status">
-							<li><ul class="inline-list">
-									<li><input type="checkbox" title="${facet.value}"
-										name="category" value="${facet.value}"
-										<c:forEach items="${categoryFilters}" var="categoryFilter">
-								<c:if test="${categoryFilter eq facet.value}">checked="checked"</c:if>
-							</c:forEach>></li>
-									<li>${facet.value}</li>
-									<li>${facet.count}</li>
-								</ul></li>
-						</c:forEach>
-					</ul>
-					<input type="hidden" name="${_csrf.parameterName}"
-						value="${_csrf.token}" />
-			</div>
-			<div class="9u">
-				<div class="centre-box">
-					<select name="sort" id="sort-select">
-						<c:set value="${sort eq 'relevance'}" var="relevance" />
-						<c:set value="${sort eq 'created'}" var="created" />
-						<option value="relevance" <c:if test="${relevance}">selected</c:if> >Relevance</option>
-						<option value="created" <c:if test="${created}">selected</c:if> >Date Added</option>
-					</select>
-					<table class="pure-table">
-						<thead>
-							<tr>
-								<th>#</th>
-								<th>Name</th>
-								<th>Category</th>
-								<th>Location</th>
-								<th>Unit Price</th>
-								<th>Quantity</th>
-								<th>Description</th>
-							</tr>
-						</thead>
-
-						<tbody>
-							<c:forEach items="${products.products}" var="product"
-								varStatus="status">
-								<tr class="pure-table-odd">
-									<td>${status.count}</td>
-									<td>${product.name}</td>
-									<td>${product.category.value}</td>
-									<td>${product.location}</td>
-									<td>${product.price}</td>
-									<td>${product.quantity}</td>
-									<td>${product.description}</td>
-								</tr>
-							</c:forEach>
-						</tbody>
-					</table>
+		<div class="row" class="15u">
+			<div class="12u">
+				<div id="banner">
+					<a href="#"><img src="resources/images/banner.jpg" alt="" /></a>
+					<!-- <div class="caption">
+						<span><strong>Arcana</strong>: A responsive HTML5 site
+							template by HTML5 UP</span> <a href="#" class="button">Find Out
+							More!</a>
+					</div> -->
 				</div>
 			</div>
-			</form>
 		</div>
 
+		<!-- Features -->
+		<div>
+			<section style="text-align: center;"><h2>Item detail</h2></section>
+		</div>
+		<!-- Divider -->
+
+		<div class="row">
+			<div class="12u">
+				<div class="divider divider-bottom"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="12u">
+				<section>
+					<figure>
+						<img alt="" src="resources/images/cloud.png">
+					</figure>
+					<h2>WHO WE ARE</h2>
+					<img alt="" src="resources/images/fish_thumbnail.jpg">
+					<a href="detail">Delicious & Tasty</a>
+					<p>Lagos</p>
+					<div class="btn-align">
+						<a class="more-link" target="_self" title="learn more" href="">5,000</a>
+					</div>
+				</section>
+			</div>
+		</div>	
+		<div>
+			<section style="text-align: center;"><h2>Also like</h2></section>
+		</div>
+		<!-- Divider -->
+
+		<div class="row">
+			<div class="12u">
+				<div class="divider divider-bottom"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="4u">
+				<section class="first">
+					<figure>
+						<img alt="" src="resources/images/leaf.png">
+					</figure>
+					<h2>WHY US?</h2>
+					<p>Mauris fermentum dictum magneuam leo. Ut telloribus eget
+						elementum vel curleifend elit. Aean auctorisi et urnaliqt.
+						Duirpis. Inteerutrm ante eu lastibulumiamur ulla fn nec eros.
+						Vestiblum ante ipsum primis faorci lucs et utrices posuere
+						cubilipende sollicitudin vd leo pharetra aug ne.ugue. Nlit
+						magnandrerit siet tiidunt aciverra sed nullanec porta diam eu
+						massa.</p>
+					<div class="btn-align">
+						<a class="more-link" target="_self" title="learn more" href="">learn
+							more</a>
+					</div>
+				</section>
+			</div>
+			<div class="4u">
+				<section>
+					<figure>
+						<img alt="" src="resources/images/cloud.png">
+					</figure>
+					<h2>WHO WE ARE</h2>
+					<p>Duirpis. Inteerutrm ante eu lastibulumiam Estiblum ante
+						ipsum primis faorci lucs et utrices posuere cubilipende
+						sollicitudin veied leo pharetra aug neaugue. Nlit magnandrerit
+						siet tinidunt aciverra sed nulla.onec porta diam eu massa. Quisque
+						diam lorem interdum apibus ac scelerisque vitpede. Donec eget
+						tellus non erat lacinia fer mentum. Donec in velit vel ipsum auct.</p>
+					<div class="btn-align">
+						<a class="more-link" target="_self" title="learn more" href="">learn
+							more</a>
+					</div>
+				</section>
+			</div>
+			<div class="4u">
+				<section>
+					<figure>
+						<img alt="" src="resources/images/cloud.png">
+					</figure>
+					<h2>WHO WE ARE</h2>
+					<p>Duirpis. Inteerutrm ante eu lastibulumiam Estiblum ante
+						ipsum primis faorci lucs et utrices posuere cubilipende
+						sollicitudin veied leo pharetra aug neaugue. Nlit magnandrerit
+						siet tinidunt aciverra sed nulla.onec porta diam eu massa. Quisque
+						diam lorem interdum apibus ac scelerisque vitpede. Donec eget
+						tellus non erat lacinia fer mentum. Donec in velit vel ipsum auct.</p>
+					<div class="btn-align">
+						<a class="more-link" target="_self" title="learn more" href="">learn
+							more</a>
+					</div>
+				</section>
+			</div>
+			
+		</div>
 
 		<!-- Divider -->
 
@@ -248,8 +246,8 @@
 		<div class="row">
 			<div class="12u">
 				<div class="cta-box">
-					<span>Amet lorem varius tempus consequat lorem?</span> <a href="#"
-						class="button">Ipsum Consequat</a>
+					<span>Farmland at your doorstep</span> <a href="#" class="button">Ipsum
+						Consequat</a>
 				</div>
 			</div>
 		</div>

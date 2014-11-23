@@ -59,8 +59,8 @@ public class InfrastructureConfig {
 	public DataSource dataSource() {
 		BasicDataSource dataSource = new BasicDataSource();
 		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-		dataSource.setUrl("jdbc:mysql://ec2-50-19-213-178.compute-1.amazonaws.com:3306/efarm");
-		dataSource.setUsername("efarm");
+		dataSource.setUrl("jdbc:mysql://localhost:3306/efarm");
+		dataSource.setUsername("root");
 		dataSource.setPassword("password");
 		dataSource.setValidationQuery("select 1");
 		

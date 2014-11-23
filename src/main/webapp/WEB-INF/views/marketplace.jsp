@@ -21,7 +21,14 @@
 								<label for="item name">Item</label> <input id="item" type="text"
 									name="name" placeholder="Item name e.g yam, cocoa">
 							</div>
-
+							<div class="pure-control-group">
+								<label for="item name">Category</label> 
+								<select id="category" name="category" placeholder="Select a category">
+									<c:forEach items="${productCategory}" var="cat">
+										<option value="${cat}">${cat.value}</option>									
+									</c:forEach>
+								</select>
+							</div>
 							<div class="pure-control-group">
 								<label for="location">Location</label> <input id="location"
 									type="text" placeholder="Item location" name="location">

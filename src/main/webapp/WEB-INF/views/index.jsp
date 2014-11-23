@@ -1,12 +1,20 @@
+
 <%@ include file="head.jsp"%>
 <!-- Main -->
-
+<nav role="main" class="leftnav">
+	<ul>
+		<li><a href="">1</a></li>
+		<li><a href="">2</a></li>
+		<li><a href="">3</a></li>
+	</ul>
+</nav>
 <div id="main-wrapper">
+
 	<div class="container">
 
 		<!-- Banner -->
 
-		<div class="row">
+		<div class="row" class="15u">
 			<div class="12u">
 				<div id="banner">
 					<a href="#"><img src="resources/images/banner.jpg" alt="" /></a>
@@ -36,8 +44,8 @@
 						magnandrerit siet tiidunt aciverra sed nullanec porta diam eu
 						massa.</p>
 					<div class="btn-align">
-						<a class="more-link" target="_self"
-							title="learn more" href="">learn more</a>
+						<a class="more-link" target="_self" title="learn more" href="">learn
+							more</a>
 					</div>
 				</section>
 			</div>
@@ -53,9 +61,9 @@
 						siet tinidunt aciverra sed nulla.onec porta diam eu massa. Quisque
 						diam lorem interdum apibus ac scelerisque vitpede. Donec eget
 						tellus non erat lacinia fer mentum. Donec in velit vel ipsum auct.</p>
-						<div class="btn-align">
-						<a class="more-link" target="_self"
-							title="learn more" href="">learn more</a>
+					<div class="btn-align">
+						<a class="more-link" target="_self" title="learn more" href="">learn
+							more</a>
 					</div>
 				</section>
 			</div>
@@ -66,8 +74,10 @@
 					</figure>
 					<h2>IN THE NEWS</h2>
 					<ul class="style-list">
-						<c:forEach items="${news}" var="title" end="4" varStatus="status">						
-							<span class="bold-list"><c:out value="${fn:substring(title, 0, 1)}" /></span><li>${title}</li>
+						<c:forEach items="${news}" var="title" end="4" varStatus="status">
+							<span class="bold-list"><c:out
+									value="${fn:substring(title, 0, 1)}" /></span>
+							<li>${title}</li>
 						</c:forEach>
 					</ul>
 				</section>
@@ -192,7 +202,7 @@
 
 		<!-- Divider -->
 
-	<!-- 	<div class="row">
+		<!-- 	<div class="row">
 			<div class="12u">
 				<div class="divider divider-top"></div>
 			</div>
@@ -203,8 +213,8 @@
 		<div class="row">
 			<div class="12u">
 				<div class="cta-box">
-					<span>Farmland at your doorstep</span> <a href="#"
-						class="button">Ipsum Consequat</a>
+					<span>Farmland at your doorstep</span> <a href="#" class="button">Ipsum
+						Consequat</a>
 				</div>
 			</div>
 		</div>

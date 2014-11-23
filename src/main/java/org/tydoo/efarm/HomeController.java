@@ -11,6 +11,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
+import javax.persistence.PersistenceException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.rowset.serial.SerialBlob;
@@ -32,6 +33,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.tydoo.efarm.model.Category;
 import org.tydoo.efarm.model.Person;
 import org.tydoo.efarm.model.Product;
 import org.tydoo.efarm.service.PersonService;
@@ -75,13 +77,14 @@ public class HomeController {
 		String path = requestPath.equals("/") || requestPath.equals(null) ? "index"
 				: requestPath.toLowerCase();
 		model.addAttribute("news", parseNews());
+		model.addAttribute("productCategory", Category.values());
 		return path;
 	}
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
-	public String newUser(@ModelAttribute Person person,
+	public String newUser(@ModelAttribute Person person, Model model,
 			@RequestParam("file") MultipartFile file, BindingResult result)
-			throws SQLException, IOException {
+			throws SQLException, IOException, PersistenceException {
 
 		if (!file.isEmpty()) {
 			Blob photo = new SerialBlob(file.getBytes());
@@ -90,7 +93,12 @@ public class HomeController {
 		logger.error(person.toString());
 		logger.error("city " + person.getAddress().get(0));
 		logger.error("uploaded file {}", file.getOriginalFilename());
+		try {
 		personService.createPerson(person);
+		} catch(PersistenceException e) {
+			model.addAttribute("message", "user already registered");
+			return "register";
+		}
 		// logger.error("type "+ person.getPersonType().get(0));
 		return "redirect:login";
 	}

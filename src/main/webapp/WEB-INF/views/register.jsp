@@ -9,7 +9,7 @@
 		<div class="row">
 			<div class="9u right-border">
 				<div id="banner">
-
+				<span class="error">${message}</span>
 					<!-- start reg form -->
 					<form class="pure-form pure-form-aligned" id="reg-form"
 						action="register?${_csrf.parameterName}=${_csrf.token}" method="post" enctype="multipart/form-data">
